@@ -13,7 +13,7 @@
       "start-all": "yarn start-pro:a && yarn start-pro:b",
       "start-dev:watch": "nodemon --watch 'src/**/*.ts' --exec npm run start-dev",
       "build": "tsc",
-      "restart": "pm2 delete all && yarn start-all"
+      "restart": "pm2 kill && yarn start-all"
    },
    "author": "airman5573",
    "license": "ISC",
