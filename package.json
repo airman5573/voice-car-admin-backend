@@ -7,7 +7,6 @@
       "test": "echo \"Error: no test specified\" && exit 1",
       "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
       "sync": "npm run typeorm schema:sync",
-      "build-admin": "cd ./src/admin/admin-client && yarn install && yarn build-pro",
       "start-dev": "NODE_ENV=development NODE_PORT=8080 GROUP=a ts-node -r dotenv/config src/index.ts",
       "start-pro:a": "NODE_ENV=production NODE_PORT=8081 GROUP=a pm2 start --name a ts-node -- -P tsconfig.json ./src/index.ts",
       "start-pro:b": "NODE_ENV=production NODE_PORT=8082 GROUP=b pm2 start --name b ts-node -- -P tsconfig.json ./src/index.ts",
