@@ -14,6 +14,8 @@ import context from "./graphql/authentication";
 import { TEAMS } from "./graphql/consts";
 import defaultValues from "./typeorm/defaultValues";
 
+require('dotenv').config(); // env파일을 사용한다
+
 (async () => {
   // DB연결
   await createConnection({

@@ -13,7 +13,8 @@
       "start-all": "yarn start-pro:a && yarn start-pro:b",
       "start-dev:watch": "nodemon --watch 'src/**/*.ts' --exec npm run start-dev",
       "build": "tsc",
-      "restart": "pm2 kill && yarn start-all"
+      "restart": "pm2 kill && yarn start-all",
+      "start": "NODE_ENV=production NODE_PORT=8081 GROUP=a ts-node -- -P tsconfig.json ./src/index.ts"
    },
    "author": "airman5573",
    "license": "ISC",
