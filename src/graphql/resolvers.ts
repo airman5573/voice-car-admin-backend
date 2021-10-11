@@ -58,7 +58,6 @@ const resolvers = {
         const payload = verify(token, process.env.SECRET_KEY);
         return token;
       } catch (err) {
-        console.log(err);
         throw new ApolloError("유효하지 않은 토큰입니다", "INVALID_ACCESS_TOKEN");
       }
     },
