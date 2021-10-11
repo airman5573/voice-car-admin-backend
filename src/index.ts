@@ -29,7 +29,13 @@ require('dotenv').config(); // env파일을 사용한다
     entities: [Metas, Passwords, Speeds, Words]
   });
 
-  const server = new ApolloServer({ typeDefs, resolvers, context });
+  const server = new ApolloServer({ 
+    typeDefs,
+    resolvers,
+    context,
+    introspection: true,
+    playground: true
+  });
   await server.start();
 
   const app = express();
