@@ -1,6 +1,5 @@
 import { AuthenticationError, ForbiddenError } from 'apollo-server-express';
 import { Request } from 'express';
-import { OutgoingMessage } from 'http';
 import { verify } from "jsonwebtoken";
 
 const context = ({ req }: { req: Request }) => {
