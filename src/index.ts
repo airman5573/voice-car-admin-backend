@@ -10,7 +10,6 @@ import { Passwords } from "./typeorm/entity/Passwords";
 import { Speeds } from "./typeorm/entity/Speeds";
 import { Words } from "./typeorm/entity/Words";
 import context from "./graphql/authentication";
-import { TEAMS } from "./graphql/consts";
 import defaultValues from "./typeorm/defaultValues";
 
 require('dotenv').config(); // env파일을 사용한다
