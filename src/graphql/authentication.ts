@@ -1,4 +1,4 @@
-import { AuthenticationError, ForbiddenError } from 'apollo-server-express';
+import { ForbiddenError } from 'apollo-server-express';
 import { Request } from 'express';
 import { verify } from "jsonwebtoken";
 
