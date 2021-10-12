@@ -23,7 +23,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Restart node server
         run: |
-          pwd
+          npm install
           ls -a
           npm run restart
-
