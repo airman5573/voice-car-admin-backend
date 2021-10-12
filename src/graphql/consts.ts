@@ -1,5 +1,4 @@
 import defaultValues from "../typeorm/defaultValues";
-import VC from "../types";
 
 export const commandMetas = {
   handOpen: {
