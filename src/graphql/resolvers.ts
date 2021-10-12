@@ -1,4 +1,3 @@
-import { print } from "graphql";
 import { ApolloError, UserInputError } from "apollo-server-express";
 import { getConnection, getRepository, In, SimpleConsoleLogger } from "typeorm";
 import defaultValues from "../typeorm/defaultValues";
