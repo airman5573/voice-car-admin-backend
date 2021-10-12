@@ -1,7 +1,6 @@
 import { print } from "graphql";
 import { ApolloError, UserInputError } from "apollo-server-express";
 import { getConnection, getRepository, In, SimpleConsoleLogger } from "typeorm";
-import typeDefs from "../graphql/typeDefs";
 import defaultValues from "../typeorm/defaultValues";
 import { Metas } from "../typeorm/entity/Metas";
 import { Passwords } from "../typeorm/entity/Passwords";
@@ -10,7 +9,6 @@ import { Words } from "../typeorm/entity/Words";
 import { commandMetas, TEAMS, cmdNames }  from "./consts";
 import { verify, sign } from "jsonwebtoken";
 import VC from "../types";
-import { OutgoingMessage } from "http";
 
 const resolvers = {
   PartName: {
