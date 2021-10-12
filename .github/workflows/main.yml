@@ -14,10 +14,6 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-20.04
-    
-    defaults:
-      run:
-        working-directory: ./src
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -28,6 +24,5 @@ jobs:
       - name: Restart node server
         run: |
           pwd
-          cd /var/www/voice-car-admin-backend
-          pwd
+          npm run restart
 
