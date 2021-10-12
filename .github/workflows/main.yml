@@ -25,4 +25,5 @@ jobs:
         run: |
           pwd
           ls -a
+          npm run restart
 
