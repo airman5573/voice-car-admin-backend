@@ -1,5 +1,4 @@
 import express from "express";
-import jwt from "jsonwebtoken";
 import { ApolloServer, gql } from "apollo-server-express";
 import typeDefs from "./graphql/typeDefs";
 import resolvers from "./graphql/resolvers";
@@ -10,7 +9,6 @@ import { Passwords } from "./typeorm/entity/Passwords";
 import { Speeds } from "./typeorm/entity/Speeds";
 import { Words } from "./typeorm/entity/Words";
 import context from "./graphql/authentication";
-import defaultValues from "./typeorm/defaultValues";
 
 require('dotenv').config(); // env파일을 사용한다
 
