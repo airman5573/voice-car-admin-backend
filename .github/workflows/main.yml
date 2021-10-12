@@ -24,5 +24,6 @@ jobs:
       - name: Restart node server
         run: |
           pwd
-          npm run restart
+          cd /var/www/voice-car-admin-backend
+          pwd
 
