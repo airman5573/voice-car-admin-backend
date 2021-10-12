@@ -1,6 +1,5 @@
 import express from "express";
 import jwt from "jsonwebtoken";
-import cors from "cors";
 import { ApolloServer, gql } from "apollo-server-express";
 import typeDefs from "./graphql/typeDefs";
 import resolvers from "./graphql/resolvers";
