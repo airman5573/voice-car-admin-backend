@@ -1,5 +1,5 @@
 import { ApolloError, UserInputError } from "apollo-server-express";
-import { getConnection, getRepository, In, SimpleConsoleLogger } from "typeorm";
+import { getRepository, In, SimpleConsoleLogger } from "typeorm";
 import defaultValues from "../typeorm/defaultValues";
 import { Metas } from "../typeorm/entity/Metas";
 import { Passwords } from "../typeorm/entity/Passwords";
