@@ -22,7 +22,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Restart node server
+        working-directory: /var/www/voice-car-admin-backend
         run: |
-          cd /var/www/voice-car-admin-backend
-          npm run restart
           pwd
+          npm run restart
+
