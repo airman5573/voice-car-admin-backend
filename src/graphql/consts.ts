@@ -1,5 +1,3 @@
-import defaultValues from "../typeorm/defaultValues";
-
 export const commandMetas = {
   handOpen: {
     nameEN: 'handOpen',
