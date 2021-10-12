@@ -21,7 +21,7 @@ jobs:
       - name: executing remote ssh commands using ssh key
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ screts.VULTR_HOST }}
+          host: ${{ secrets.VULTR_HOST }}
           username: ${{ secrets.VULTR_USER }}
           key: ${{ secrets.VULTR_KEY }}
           script: sh voice-car-admin-backend-deploy.sh
