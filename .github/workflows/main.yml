@@ -24,4 +24,4 @@ jobs:
           host: ${{ screts.VULTR_HOST }}
           username: ${{ secrets.VULTR_USER }}
           key: ${{ secrets.VULTR_KEY }}
-          script: sh deploy.sh
+          script: sh voice-car-admin-backend-deploy.sh
