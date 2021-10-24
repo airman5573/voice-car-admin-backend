@@ -12,7 +12,7 @@
       "start-pro": "NODE_ENV=production NODE_PORT=8080 pm2 start ts-node -- -P tsconfig.json ./src/index.ts",
       "start-dev:watch": "nodemon --watch 'src/**/*.ts' --exec npm run start-dev",
       "build": "tsc",
-      "restart": "pm2 kill && yarn start-all",
+      "restart": "pm2 kill && yarn start-pro",
       "start": "NODE_ENV=production NODE_PORT=8080 ts-node -- -P tsconfig.json ./src/index.ts"
    },
    "author": "airman5573",
