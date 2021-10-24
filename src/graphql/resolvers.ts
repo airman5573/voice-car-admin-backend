@@ -289,7 +289,7 @@ const resolvers = {
 
       // Passwords
       TEAMS.forEach(async (team) => {
-        const passwords = new Passwords(team, `${process.env.GROUP}${team}`);
+        const passwords = new Passwords(team, `${team}`);
         passwords.save();
       });
 

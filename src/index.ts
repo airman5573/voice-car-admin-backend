@@ -19,7 +19,7 @@ require('dotenv').config(); // env파일을 사용한다
     host: "localhost",
     username: process.env.NODE_ENV == 'production' ? process.env.LIVE_DB_USER : process.env.DEV_DB_USER,
     password: process.env.NODE_ENV == 'production' ? process.env.LIVE_DB_PASS : process.env.DEV_DB_PASS,
-    database: `${process.env.DB_NAME}${process.env.GROUP}`,
+    database: `${process.env.DB_NAME}`,
     synchronize: false,
     logging: true,
     entities: [Metas, Passwords, Speeds, Words]
