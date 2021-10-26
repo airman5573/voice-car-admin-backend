@@ -42,7 +42,8 @@ const typeDefs = gql`
   type Meta {
     adminPassword: String,
     controlMode: ControlMode,
-    editable: Boolean
+    editableSimilarWords: Boolean,
+    editableSpeeds: Boolean
   }
 
   type Command {
@@ -85,14 +86,16 @@ const typeDefs = gql`
 
   type InitialState {
     teamPasswords: [TeamPassword],
-    editable: Boolean,
-    controlMode: ControlMode
+    controlMode: ControlMode,
+    editableSimilarWords: Boolean,
+    editableSpeeds: Boolean
   }
 
   type UserLoginResult {
     team: Int,
     controlMode: ControlMode,
-    editable: Boolean
+    editableSimilarWords: Boolean,
+    editableSpeeds: Boolean,
   }
 
   type Query {
@@ -115,10 +118,11 @@ const typeDefs = gql`
     addNewSimilarWord(team: Int, command: CommandName, word: String): SimilarWords,
     updateCommandSpeed(team: Int, command: CommandName, speed: Int): Speed,
     updateControlMode(mode: ControlMode): ControlMode,
-    editable(allow: Boolean): Boolean,
     reset: String,
     resetSimilarWords: String,
     vacateSimilarWords: String,
+    updateEditableSimilarWords(editable: Boolean): Boolean,
+    updateEditableSpeeds(editable: Boolean): Boolean,
     resetSpeeds: String,
     vacateSpeeds: String
   }

@@ -64,11 +64,12 @@ const resolvers = {
       const metas = await getRepository(Metas)
         .createQueryBuilder()
         .getMany();
-      const { adminPassword, controlMode, editable } = metas[0];
+      const { adminPassword, controlMode, editableSimilarWords, editableSpeeds } = metas[0];
       return {
         adminPassword,
         controlMode,
-        editable
+        editableSimilarWords,
+        editableSpeeds
       };
     },
     allTeamPasswords: async (parent, args, context: VC.Context, info) => {
@@ -144,11 +145,12 @@ const resolvers = {
         const metas = await getRepository(Metas)
         .createQueryBuilder()
         .getMany();
-        const { controlMode, editable } = metas[0];
+        const { controlMode, editableSimilarWords, editableSpeeds } = metas[0];
         return { 
           team: result.team,
           controlMode,
-          editable
+          editableSimilarWords,
+          editableSpeeds
         };
       }
       throw new UserInputError('비밀번호가 일치하지 않습니다');
@@ -176,17 +178,6 @@ const resolvers = {
         .set({ controlMode: mode })
         .execute()
       return mode;
-    },
-    editable: async (parent, args, context: VC.Context, info) => {
-      const { loggedin } = context;
-      if (!loggedin) throw new ApolloError("로그인이 필요한 요청입니다", "INVALID_ACCESS_TOKEN");
-      const { allow } = args;
-      await getRepository(Metas)
-        .createQueryBuilder()
-        .update()
-        .set({ editable: allow })
-        .execute()
-      return allow;
     },
     updateTeamPasswords: async (parent, args, context: VC.Context, info) => {
       const { loggedin } = context;
@@ -284,7 +275,7 @@ const resolvers = {
       if (!loggedin) throw new ApolloError("로그인이 필요한 요청입니다", "INVALID_ACCESS_TOKEN");
       
       // Meta
-      let metas = new Metas(1, defaultValues.metas.adminPassword, 'vc', false);
+      let metas = new Metas(1, defaultValues.metas.adminPassword, 'vc', false, false);
       metas.save();
 
       // Passwords
@@ -325,6 +316,15 @@ const resolvers = {
       });
       return "success";
     },
+    updateEditableSimilarWords: async (parent, args, context: VC.Context, info) => {
+      const { editable } = args;
+      await getRepository(Metas)
+        .createQueryBuilder()
+        .update()
+        .set({ editableSimilarWords: editable })
+        .execute();
+      return editable == 1 ? true : false;
+    },
     resetSpeeds: async (parent, args, context: VC.Context, info) => {
       TEAMS.forEach(async (team) => {
         const speeds = new Speeds(team, defaultValues.speeds);
@@ -342,6 +342,15 @@ const resolvers = {
         speeds.save();
       });
       return "success";
+    },
+    updateEditableSpeeds: async (parent, args, context: VC.Context, info) => {
+      const { editable } = args;
+      await getRepository(Metas)
+        .createQueryBuilder()
+        .update()
+        .set({ editableSpeeds: editable })
+        .execute();
+        return editable == 1 ? true : false;
     },
   }
 };

@@ -2,7 +2,8 @@ const defaultValues = {
   metas: {
     adminPassword: '5911',
     controlMode: 'vc',
-    editable: false
+    editableSimilarWords: false,
+    editableSpeeds: false,
   },
   speeds: {
     handOpen: 60,

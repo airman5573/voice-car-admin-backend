@@ -4,12 +4,13 @@ import defaultValues from "../defaultValues";
 @Entity('vc_metas')
 export class Metas extends BaseEntity {
 
-  constructor(id: number, adminPassword: String, controlMode: String, editable: boolean) {
+  constructor(id: number, adminPassword: String, controlMode: String, editableSimilarWords: boolean, editableSpeeds: boolean) {
     super();
     this.id = id;
     this.adminPassword = adminPassword;
     this.controlMode = controlMode;
-    this.editable = editable;
+    this.editableSimilarWords = editableSimilarWords;
+    this.editableSpeeds = editableSpeeds;
   }
 
   @PrimaryGeneratedColumn()
@@ -21,6 +22,9 @@ export class Metas extends BaseEntity {
   @Column({ name: 'control_mode', default: defaultValues.metas.controlMode })
   controlMode: String
 
-  @Column({ default: defaultValues.metas.editable })
-  editable: boolean
+  @Column({ name: 'editable_similarwords', default: defaultValues.metas.editableSimilarWords })
+  editableSimilarWords: boolean
+
+  @Column({ name: 'editable_speeds', default: defaultValues.metas.editableSpeeds })
+  editableSpeeds: boolean
 }
