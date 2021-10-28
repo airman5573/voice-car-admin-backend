@@ -176,7 +176,7 @@ const resolvers = {
         .createQueryBuilder()
         .update()
         .set({ controlMode: mode })
-        .execute()
+        .execute();
       return mode;
     },
     updateTeamPasswords: async (parent, args, context: VC.Context, info) => {
