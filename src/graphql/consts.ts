@@ -99,4 +99,4 @@ export const cmdNames = [
   'bottomGo', 'bottomGoFast', 'bottomLeft', 'bottomRight', 'bottomBack'
 ];
 
-export const TEAMS = Array(10).fill(1).map((val, index) => { return val + index });
+export const TEAMS = Array(12).fill(1).map((val, index) => { return val + index });

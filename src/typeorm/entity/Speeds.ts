@@ -5,7 +5,6 @@ import { Words } from "./Words";
 
 @Entity('vc_speeds')
 export class Speeds extends BaseEntity {
-
   constructor(team: number = 1, speeds = defaultValues.speeds) {
     super();
     const { 
